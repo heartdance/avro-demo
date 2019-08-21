@@ -1,6 +1,5 @@
 package com.cherlshall.avrodemo;
 
-import com.cherlshall.avrodemo.avrodemo.AvroFactory;
 import org.apache.avro.generic.GenericRecord;
 import org.junit.Test;
 
@@ -37,6 +36,10 @@ public class AvroFactoryTest {
                 "       {" +
                 "           \"name\": \"info\"," +
                 "           \"type\": [\"null\", \"bytes\"]" +
+                "       }," +
+                "       {" +
+                "           \"name\": \"info2\"," +
+                "           \"type\": [\"null\", \"string\"]" +
                 "       }" +
                 "   ]" +
                 "}";
@@ -45,6 +48,7 @@ public class AvroFactoryTest {
         data.put("age", 18);
         data.put("gender", true);
         data.put("info", ByteBuffer.wrap(new byte[] {1,2,3}));
+        data.put("info2", null);
         byte[] bytes = AvroFactory.mapToByte(schema, data);
         GenericRecord record = AvroFactory.byteToRecord(schema, bytes);
         System.out.println(Arrays.toString(bytes));

@@ -1,4 +1,4 @@
-package com.cherlshall.avrodemo.avrodemo;
+package com.cherlshall.avrodemo;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
